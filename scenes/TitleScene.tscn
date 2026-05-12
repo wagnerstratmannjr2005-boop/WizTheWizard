@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdjfe6r8gh4xp"]
+
+[ext_resource type="Texture2D" uid="uid://bxqi4idc6hnk1" path="res://sprites/f9feabf93d1b8007cc18109fb7987c3967c8b25b.png" id="1_lx1li"]
+
+[node name="TitleScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(144, 104)
+scale = Vector2(0.15, 0.192)
+texture = ExtResource("1_lx1li")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 116.0
+offset_right = 262.0
+offset_bottom = 147.0
+text = "CKEMCAR JOGO PORRAAAAA"

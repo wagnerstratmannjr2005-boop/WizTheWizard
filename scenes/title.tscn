@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsa2xjo8t6jn3"]
+
+[ext_resource type="Script" uid="uid://cfnnr1e6qvn6n" path="res://scripts/title.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://ckje4omv3v2nh" path="res://sprites/testelouco.jpg" id="2_wosw1"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_4ignj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wosw1")
+centered = false
+
+[node name="TitleLable" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 12.0
+offset_right = 232.0
+offset_bottom = 91.0
+text = "Wiz
+pelas estações do ano!"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+offset_left = 88.0
+offset_top = 69.0
+offset_right = 204.0
+offset_bottom = 100.0
+text = "Iniciar"
+icon_alignment = 1
+
+[node name="Start2" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 100.0
+offset_right = 205.0
+offset_bottom = 131.0
+text = "Configuraçoes
+"
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 161.0
+offset_right = 288.0
+offset_bottom = 210.0
+size_flags_vertical = 1
+text = "Desenvolvido por 
+Gabriel Cavali e Wagner Stratmann"
+
+[node name="sair" type="Button" parent="."]
+offset_left = 85.0
+offset_top = 130.0
+offset_right = 204.0
+offset_bottom = 161.0
+text = "Sair"
+icon_alignment = 1
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start2" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

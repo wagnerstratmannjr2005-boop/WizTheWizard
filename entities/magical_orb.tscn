@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://yn8bfmg5gpgk"]
+
+[ext_resource type="Texture2D" uid="uid://c5sorfbloi0vv" path="res://sprites/Lil Wiz/Magical_Orbs_Spell_(32 x 32).png" id="1_21bi0"]
+[ext_resource type="Script" uid="uid://dpay5opbqayeq" path="res://scripts/magical_orb.gd" id="1_lun43"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lun43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsiy2"]
+atlas = ExtResource("1_21bi0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc6q5"]
+atlas = ExtResource("1_21bi0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjiga"]
+atlas = ExtResource("1_21bi0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdnmc"]
+atlas = ExtResource("1_21bi0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ydkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsiy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc6q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjiga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdnmc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MagicalOrb" type="Area2D"]
+z_index = 2
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_lun43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lun43")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ydkv")
+autoplay = "default"
+frame_progress = 0.609996
+
+[node name="SelfDestructTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SelfDestructTimer" to="." method="_on_self_destruct_timer_timeout"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://biewxw0ij2iui"]
+
+[ext_resource type="Script" uid="uid://bm0l58m5b0ejh" path="res://scripts/end.gd" id="1_mwn6m"]
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_mwn6m")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_top = 2.0
+offset_right = 288.0
+offset_bottom = 210.0
+color = Color(2.83971e-06, 0.41049, 0.574055, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 157.0
+offset_right = 280.0
+offset_bottom = 232.0
+text = "Desenvolvido por 
+Gabriel Cavali e Wagner Stratmann"
+
+[node name="TitleLable" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 12.0
+offset_right = 227.0
+offset_bottom = 91.0
+text = "Obrigado
+por
+jogar!"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 108.0
+offset_right = 209.0
+offset_bottom = 139.0
+text = "Jogar Novamente"
+icon_alignment = 1
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
